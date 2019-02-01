@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".fragments.FragmentReport">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="50dp">
 
-</FrameLayout>
+        <EditText
+            android:inputType="number"
+            android:layout_marginRight="16dp"
+            android:id="@+id/et_pelak_b1"
+            android:layout_width="70dp"
+            android:layout_height="60dp" />
+        <Spinner
+            android:layout_marginRight="2dp"
+            android:id="@+id/sp_pelak_b2"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@null"
+            android:spinnerMode="dropdown"/>
+
+        <EditText
+            android:inputType="number"
+            android:layout_marginRight="16dp"
+            android:id="@+id/et_pelak_b3"
+            android:layout_width="80dp"
+            android:layout_height="60dp" />
+
+
+        <EditText
+            android:inputType="number"
+            android:gravity="center"
+            android:id="@+id/et_pelak_b4"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:hint="ایران" />
+    </LinearLayout>
+    <Button
+        android:text="انتخاب تخلف"
+        android:id="@+id/submit_vio"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
