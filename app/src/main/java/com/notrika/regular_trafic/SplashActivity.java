@@ -26,7 +26,7 @@ import retrofit2.Callback;
 
 public class SplashActivity extends AppCompatActivity {
     VideoView videoView;
-    final long SPLASH_TIME = 3*1000;
+    final long SPLASH_TIME = 1*1000;
     Thread thread;
 
     @Override

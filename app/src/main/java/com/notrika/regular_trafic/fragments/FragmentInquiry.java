@@ -101,7 +101,6 @@ public class FragmentInquiry extends Fragment {
         sp_pelak_b2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), items[position], Toast.LENGTH_SHORT).show();
                 horuf=items[position];
             }
 

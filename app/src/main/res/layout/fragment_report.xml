@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".fragments.FragmentReport">
 
     <LinearLayout
@@ -18,6 +17,8 @@
             android:inputType="number"
             android:layout_marginRight="16dp"
             android:id="@+id/et_pelak_b1"
+            android:maxLength="2"
+            android:gravity="center"
             android:layout_width="70dp"
             android:layout_height="60dp" />
         <Spinner
@@ -33,6 +34,7 @@
             android:layout_marginRight="16dp"
             android:id="@+id/et_pelak_b3"
             android:layout_width="80dp"
+            android:maxLength="3"
             android:layout_height="60dp" />
 
 
@@ -40,6 +42,7 @@
             android:inputType="number"
             android:gravity="center"
             android:id="@+id/et_pelak_b4"
+            android:maxLength="2"
             android:layout_width="70dp"
             android:layout_height="60dp"
             android:hint="ایران" />
@@ -47,7 +50,8 @@
     <Button
         android:text="انتخاب تخلف"
         android:id="@+id/submit_vio"
-        android:visibility="gone"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

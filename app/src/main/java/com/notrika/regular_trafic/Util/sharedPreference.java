@@ -8,6 +8,7 @@ public class sharedPreference {
 
     String PREFS_NAME = "aaa";
     String TokenKey = "TokenKey";
+    String scorekey = "scorekey";
     Context context;
     SharedPreferences sharedPreferences;
     Editor editor;
@@ -24,4 +25,13 @@ public class sharedPreference {
     public String getToken() {
         return sharedPreferences.getString(TokenKey, "");
     }
+
+    public void setScore(Integer score){
+        editor.putInt(scorekey,score);
+        editor.commit();
+    }
+    public Integer getScore() {
+        return sharedPreferences.getInt(scorekey, 0);
+    }
+
 }
