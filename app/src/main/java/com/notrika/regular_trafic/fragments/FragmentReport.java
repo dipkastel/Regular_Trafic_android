@@ -61,6 +61,7 @@ public class FragmentReport extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         final View view = inflater.inflate(R.layout.fragment_report, container, false);
         init(view);
+
         fillspiner();
         setlisteners();
         getviolenc();

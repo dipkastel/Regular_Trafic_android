@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.notrika.regular_trafic.fragments.FragmentInquiry;
+import com.notrika.regular_trafic.fragments.FragmentInquiryGetPlak;
+import com.notrika.regular_trafic.fragments.FragmentInquiryMain;
 import com.notrika.regular_trafic.fragments.FragmentProduct;
 import com.notrika.regular_trafic.fragments.FragmentReport;
 
@@ -18,9 +19,9 @@ import eu.long1.spacetablayout.SpaceTabLayout;
 public class MainActivity extends AppCompatActivity {
 
     TextView txt;
-    ViewPager viewPager;
+    public ViewPager viewPager;
 
-    SpaceTabLayout tabLayout;
+   public SpaceTabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new FragmentProduct());
         fragmentList.add(new FragmentReport());
-        fragmentList.add(new FragmentInquiry());
+        fragmentList.add(new FragmentInquiryMain());
 
 
         //we need the savedInstanceState to get the position
         tabLayout.initialize(viewPager, getSupportFragmentManager(),
                 fragmentList, savedInstanceState);
+
+        viewPager.setOffscreenPageLimit(3);
 
     }
 

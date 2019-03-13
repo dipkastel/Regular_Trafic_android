@@ -1,7 +1,11 @@
 package com.notrika.regular_trafic;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
+import android.os.strictmode.Violation;
 
+import com.notrika.regular_trafic.Database.Database_app;
+import com.notrika.regular_trafic.Database.TBL_Violation_Dao;
 import com.notrika.regular_trafic.Util.sharedPreference;
 import com.notrika.regular_trafic.network.clientApi;
 
@@ -16,13 +20,29 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class application extends Application {
+    private final String DATABASE_NAME = "db_regular";
     public clientApi client;
     String API_BASE_URL = "http://www.adanjir.com/api/";
+    public TBL_Violation_Dao violation_dao;
+    Database_app db;
 
     @Override
     public void onCreate() {
         super.onCreate();
         RefreshRetrofit();
+        RefreshDatabase();
+    }
+
+    private void RefreshDatabase() {
+        db = Room.databaseBuilder(getApplicationContext(),
+                Database_app.class, DATABASE_NAME)
+                .fallbackToDestructiveMigration()
+                .build();
+        violation_dao = db.tbl_violation_dao();
+    }
+    public TBL_Violation_Dao dao_violation(){
+        return violation_dao;
+
     }
 
     public void RefreshRetrofit() {

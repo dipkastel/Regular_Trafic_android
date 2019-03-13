@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".fragments.FragmentInquiry">
+    tools:context=".fragments.FragmentInquiryGetPlak">
 
     <LinearLayout
         android:gravity="center"
@@ -15,6 +15,7 @@
         android:padding="50dp">
 
         <EditText
+            android:maxLength="2"
             android:inputType="number"
             android:layout_marginRight="16dp"
             android:id="@+id/et_pelak_b1"
@@ -29,6 +30,7 @@
             android:spinnerMode="dropdown"/>
 
         <EditText
+            android:maxLength="3"
             android:inputType="number"
             android:layout_marginRight="16dp"
             android:id="@+id/et_pelak_b3"
@@ -37,6 +39,7 @@
 
 
         <EditText
+            android:maxLength="2"
             android:inputType="number"
             android:gravity="center"
             android:id="@+id/et_pelak_b4"
@@ -44,6 +47,7 @@
             android:layout_height="60dp"
             android:hint="ایران" />
     </LinearLayout>
+
     <Button
 
         android:text="مشاهده تخلفات"

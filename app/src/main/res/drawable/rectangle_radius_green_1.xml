@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:viewportWidth="680"
+    android:viewportHeight="162" android:width="680dp" android:height="162dp">
+    <path android:name="Rounded_Rectangle_5_copy" android:fillColor="#698E49"
+        android:pathData="M 650,0 Q 680,0 680,30 L 680,120 Q 680,150 650,150 L 30,150 Q 0,150 0,120 L 0,30 Q 0,0 30,0 z" />
+</vector>

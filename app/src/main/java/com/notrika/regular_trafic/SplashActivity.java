@@ -1,22 +1,21 @@
 package com.notrika.regular_trafic;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Handler;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Window;
+import android.view.View;
 import android.view.WindowManager;
-import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.notrika.regular_trafic.Entitie.OperationResult;
 import com.notrika.regular_trafic.Entitie.Req_register;
 import com.notrika.regular_trafic.Entitie.Res_register;
+import com.notrika.regular_trafic.Util.Popup;
 import com.notrika.regular_trafic.Util.func;
 import com.notrika.regular_trafic.Util.sharedPreference;
 
@@ -38,6 +37,9 @@ public class SplashActivity extends AppCompatActivity {
         init();
         playVideo();
         sleep();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+
+
 
     }
     private void registeruser() {
@@ -65,6 +67,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<OperationResult<Res_register>> call, Throwable t) {
+                Popup popup=new Popup(activiti_splash.this);
                 registeruser();
             }
         });
@@ -72,7 +75,6 @@ public class SplashActivity extends AppCompatActivity {
     private void playVideo() {
         Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video);
         videoView.setVideoURI(video);
-
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
             }

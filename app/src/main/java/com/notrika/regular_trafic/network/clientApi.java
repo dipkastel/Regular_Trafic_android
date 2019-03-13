@@ -1,9 +1,12 @@
 package com.notrika.regular_trafic.network;
 
 import com.notrika.regular_trafic.Entitie.OperationResult;
+import com.notrika.regular_trafic.Entitie.ReqMyReports;
+import com.notrika.regular_trafic.Entitie.Req_Orderproduct;
 import com.notrika.regular_trafic.Entitie.Req_Update;
 import com.notrika.regular_trafic.Entitie.Req_register;
 import com.notrika.regular_trafic.Entitie.Req_report;
+import com.notrika.regular_trafic.Entitie.Res_InQuery;
 import com.notrika.regular_trafic.Entitie.Res_Update;
 import com.notrika.regular_trafic.Entitie.Res_Violenc;
 import com.notrika.regular_trafic.Entitie.Res_product;
@@ -33,4 +36,10 @@ public interface clientApi {
 
     @GET("product/getall")
     Call<OperationResult<List<Res_product>>> getallproduct();
+
+    @POST("Report/MyReports")
+    Call<OperationResult<List<Res_InQuery>>> getInquiries(@Body ReqMyReports reqMyReports);
+
+    @POST("product/OrderProduct")
+    Call<OperationResult<Boolean>> orderproduct(@Body Req_Orderproduct req_orderproduct);
 }
